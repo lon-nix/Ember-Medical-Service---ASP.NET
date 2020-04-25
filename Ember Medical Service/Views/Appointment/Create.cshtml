@@ -1,0 +1,55 @@
+﻿@model Ember_Medical_Service.Models.CreateAppointmentVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CreateAppointmentVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PatientID" class="control-label"></label>
+                <select asp-for="PatientID" class ="form-control" asp-items="ViewBag.PatientID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhysicianID" class="control-label"></label>
+                <select asp-for="PhysicianID" class ="form-control" asp-items="ViewBag.PhysicianID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedByID" class="control-label"></label>
+                <select asp-for="CreatedByID" class ="form-control" asp-items="ViewBag.CreatedByID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApptDate" class="control-label"></label>
+                <input asp-for="ApptDate" class="form-control" />
+                <span asp-validation-for="ApptDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApptTime" class="control-label"></label>
+                <input asp-for="ApptTime" class="form-control" />
+                <span asp-validation-for="ApptTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment" class="control-label"></label>
+                <input asp-for="Comment" class="form-control" />
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
