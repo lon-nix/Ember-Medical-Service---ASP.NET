@@ -1,0 +1,55 @@
+﻿@model Ember_Medical_Service.Models.ListOfAppointmentVM
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="container-fluid">
+        <h1>Edit</h1>
+
+        <h4>ListOfAppointment</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ID" />
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="PatientID" class="control-label"></label>
+                            <select asp-for="PatientID" class="form-control" asp-items="ViewBag.PatientID"></select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="PhysicianID" class="control-label"></label>
+                            <select asp-for="PhysicianID" class="form-control" asp-items="ViewBag.PhysicianID"></select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label asp-for="ApptDate" class="control-label"></label>
+                            <input asp-for="ApptDate" class="form-control" />
+                            <span asp-validation-for="ApptDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="ApptTime" class="control-label"></label>
+                            <input asp-for="ApptTime" class="form-control" />
+                            <span asp-validation-for="ApptTime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label asp-for="Comment" class="control-label"></label>
+                            <input asp-for="Comment" class="form-control" />
+                            <span asp-validation-for="Comment" class="text-danger"></span>
+                        </div>                       
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Return to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+     </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

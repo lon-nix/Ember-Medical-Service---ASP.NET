@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Ember_MedicalPortal-FEA672AE-9C8B-4594-A545-A2B4E9F8840E</UserSecretsId>
+    <RootNamespace>Ember_MedicalPortal</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200428015732_Update.cs" />
+    <Compile Remove="Data\Migrations\20200428015732_Update.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200428020126_updateuser.cs" />
+    <Compile Remove="Data\Migrations\20200428020126_updateuser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200428020754_AddedTable.cs" />
+    <Compile Remove="Data\Migrations\20200428020754_AddedTable.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+
+</Project>
